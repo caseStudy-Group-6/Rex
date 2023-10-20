@@ -30,6 +30,23 @@ def Barbque(innerChoice):
             global b5
             b5 = b5 + 1 
             return b5
+            
+    match innerChoice:
+        case -1:
+            b1 = b1 - 1 
+            return b1
+        case -2:
+            b2 = b2 - 1 
+            return b2
+        case -3: 
+            b3 = b3 - 1 
+            return b3
+        case -4:
+            b4 = b4 - 1 
+            return b4
+        case -5:
+            b5 = b5 - 1 
+            return b5
 
 sizzling = 0
 def Sizzling():
