@@ -68,6 +68,8 @@ while choice <= 5:
     if choice == 1:
         while innerChoice != 6:
             result = Barbque(innerChoice)
+            # Isip ka ng statement na maganda, if babawas yung user dapat magdagdag siya ng negative number sa ioder niya, isip ka ng best statement doon
+            # print(f'To remove Order, ???')
             print(f"[1] Barbeque = 310 : {b1}")
             print(f"[2] Barbeque Party Trey = 1,565 : {b2}")
             print(f"[3] Pork Barbeque = 60 : {b3}")
