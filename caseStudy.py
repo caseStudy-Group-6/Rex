@@ -273,7 +273,7 @@ while choice <= 5:
         while innerChoice != 6:
             result = Dessert(innerChoice)
             print(f"To remove the Order, Input a negative sign")
-            print(f"[1] Barbeque = 310 : {d1}")
+            print(f"[1] mark = 310 : {d1}")
             print(f"[2] Barbeque Party Trey = 1,565 : {d2}")
             print(f"[3] Pork Barbeque = 60 : {d3}")
             print(f"[4] Chicken Barbeque Stick = 70 : {d4}")
