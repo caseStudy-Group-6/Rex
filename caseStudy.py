@@ -25,6 +25,11 @@ d2 = 0
 d3 = 0
 d4 = 0
 d5 = 0
+over1 = 0
+over2 = 0
+over3 = 0
+over4 = 0
+over5 = 0
 
 def Barbque(innerChoice):
     match innerChoice:
@@ -215,13 +220,37 @@ def Dessert(innerChoice):
         case -5:
             d5 = d5 - 1 
             return d5
+def Overalls(innerChoice):
+    innerChoice = innerChoice
+    match innerChoice:
+        case 1:
+            global over1
+            over1 = over1 + b1 + b2 + b3 + b4 + b5
+            return over1
+        case 2:
+            global over2
+            over2 = over2 + s1 + s2 + s3 + s4 +s5
+            return over2
+        case 3:
+            global over3 
+            over3 = over3 + sf1 + sf2 + sf3 + sf4 + sf5 
+            return over3
+        case 4:
+            global over4 
+            over4 = over4 + br1 + br2 + br3 + br4 + br5
+            return over4
+        case 5:
+            global over5
+            over5 = over5 + d1 + d2 + d3 + d4 + d5
+            return over5
 
 while choice <= 5:
-    print(f"[1] Barbeque ")
-    print(f"[2] Sizzling Plate ")
-    print(f"[3] Seafood ")
-    print(f"[4] Beverages ")
-    print(f"[5] Dessert ")
+    result = Overalls(choice)
+    print(f"[1] Barbeque :{over1}")
+    print(f"[2] Sizzling Plate :{over2}")
+    print(f"[3] Seafood :{over3}")
+    print(f"[4] Beverages :{over4}")
+    print(f"[5] Dessert :{over5}")
     print(f"[6] Checkout ")
     choice = int(input(""))
     innerChoice = 0
