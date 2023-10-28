@@ -1,257 +1,192 @@
 choice = 0 
 innerChoice = 0
-b1 = 0
-b2 = 0
-b3 = 0
-b4 = 0
-b5 = 0
-s1 = 0
-s2 = 0
-s3 = 0
-s4 = 0
-s5 = 0
-sf1 = 0
-sf2 = 0
-sf3 = 0
-sf4 = 0
-sf5 = 0
-br1 = 0
-br2 = 0
-br3 = 0
-br4 = 0
-br5 = 0
-d1 = 0
-d2 = 0
-d3 = 0
-d4 = 0
-d5 = 0
-over1 = 0
-over2 = 0
-over3 = 0
-over4 = 0
-over5 = 0
+over1, over2, over3, over4, over5 = [0] * 5
+b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5 = [0] * 10
+s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5 = [0] * 10
+sf1, sf2, sf3, sf4, s5, psf1, psf2, psf3, psf4, psf5 = [0] * 10
+br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5 = [0] * 10
+d1, d2, d3, d4, d5, pd1, pd2, pd3, pd4, pd5 = [0] * 10
+total = 0
 
 def Barbque(innerChoice):
+    global b1, b2, b3, b4, b5
     match innerChoice:
         case 1:
-            global b1
             b1 = b1 + 1 
-            return b1
         case 2:
-            global b2
             b2 = b2 + 1 
-            return b2
-        case 3:
-            global b3 
+        case 3: 
             b3 = b3 + 1 
-            return b3
         case 4:
-            global b4 
             b4 = b4 + 1 
-            return b4
         case 5:
-            global b5
             b5 = b5 + 1 
-            return b5
         case -1:
             b1 = b1 - 1 
-            return b1
         case -2:
-            b2 = b2 - 1 
-            return b2
+            b2 = b2 - 1     
         case -3: 
             b3 = b3 - 1 
-            return b3
         case -4:
             b4 = b4 - 1 
-            return b4
         case -5:
             b5 = b5 - 1 
-            return b5
+    return b1, b2, b3, b4, b5
 
 def Sizzling(innerChoice):
+    global s1, s2, s3, s4, s5
     match innerChoice:
         case 1:
-            global s1
             s1 = s1 + 1 
-            return s1
         case 2:
-            global s2
             s2 = s2 + 1 
-            return s2
         case 3:
-            global s3 
             s3 = s3 + 1 
-            return s3
         case 4:
-            global s4 
             s4 = s4 + 1 
-            return s4
         case 5:
-            global s5
             s5 = s5 + 1 
-            return s5
         case -1:
             s1 = s1 - 1 
-            return s1
         case -2:
             s2 = s2 - 1 
-            return s2
         case -3: 
             s2 = s3 - 1 
-            return s3
         case -4:
             s4 = s4 - 1 
-            return s4
         case -5:
             s5 = s5 - 1 
-            return s5
+    return s1, s2, s3, s4, s5
 
 def Seafood(innerChoice):
+    global sf1, sf2, sf3, sf4, sf5
     match innerChoice:
         case 1:
-            global sf1
             sf1 = sf1 + 1 
-            return sf1
         case 2:
-            global sf2
             sf2 = sf2 + 1 
-            return sf2
         case 3:
-            global sf3 
             sf3 = sf3 + 1 
-            return sf3
         case 4:
-            global sf4 
             sf4 = sf4 + 1 
-            return sf4
         case 5:
-            global sf5
             sf5 = sf5 + 1 
-            return sf5
         case -1:
             sf1 = sf1 - 1 
-            return sf1
         case -2:
             sf2 = sf2 - 1 
-            return sf2
         case -3: 
             sf2 = sf3 - 1 
-            return sf3
         case -4:
             sf4 = sf4 - 1 
-            return sf4
         case -5:
             sf5 = sf5 - 1 
-            return sf5
+    return sf1, sf2, sf3, sf4, sf5
 
 def Beverages(innerChoice):
+    global br1, br2, br3, br4, br5
     match innerChoice:
         case 1:
-            global br1
             br1 = br1 + 1 
-            return br1
         case 2:
-            global br2
             br2 = br2 + 1 
-            return br2
         case 3:
-            global br3 
             br3 = br3 + 1 
-            return br3
         case 4:
-            global br4 
             br4 = br4 + 1 
-            return br4
         case 5:
-            global br5
             br5 = br5 + 1 
-            return br5
         case -1:
             br1 = br1 - 1 
-            return br1
         case -2:
             br2 = br2 - 1 
-            return br2
         case -3: 
             br2 = br3 - 1 
-            return br3
         case -4:
             br4 = br4 - 1 
-            return br4
         case -5:
             br5 = br5 - 1 
-            return br5
+    return br1, br2, br3, br4, br5
 
 def Dessert(innerChoice):
+    global d1, d2, d3, d4, d5
     match innerChoice:
         case 1:
-            global d1
             d1 = d1 + 1 
-            return d1
         case 2:
-            global d2
             d2 = d2 + 1 
-            return d2
         case 3:
-            global d3 
             d3 = d3 + 1 
-            return d3
         case 4:
-            global d4 
             d4 = d4 + 1 
-            return d4
         case 5:
-            global d5
             d5 = d5 + 1 
-            return d5
         case -1:
             d1 = d1 - 1 
-            return d1
         case -2:
             d2 = d2 - 1 
-            return d2
         case -3: 
             d2 = d3 - 1 
-            return d3
         case -4:
             d4 = d4 - 1 
-            return d4
         case -5:
             d5 = d5 - 1 
-            return d5
+    return d1, d2, d3, d4, d5
+
 def Overalls(innerChoice):
     innerChoice = innerChoice
+    global over1, over2, over3, over4, over5
     match innerChoice:
         case 1:
-            global over1
             over1 = over1 + b1 + b2 + b3 + b4 + b5
-            return over1
         case 2:
-            global over2
             over2 = over2 + s1 + s2 + s3 + s4 +s5
-            return over2
-        case 3:
-            global over3 
+        case 3: 
             over3 = over3 + sf1 + sf2 + sf3 + sf4 + sf5 
-            return over3
         case 4:
-            global over4 
             over4 = over4 + br1 + br2 + br3 + br4 + br5
-            return over4
         case 5:
-            global over5
             over5 = over5 + d1 + d2 + d3 + d4 + d5
-            return over5
+    return over1, over2, over3, over4, over5
+
+def checkout(payment):
+    global pb1, pb2, pb3, pb4, pb5, total, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pd1, pd2, pd3, pd4, pd5
+    pb1 = 310 * b1
+    pb2 = 1,565 * b2
+    pb3 = 60 * b3
+    pb4 = 70 * b4
+    pb5 = 85 * b5
+    ps1 = 
+    ps2 = 
+    ps3 = 
+    ps4 = 
+    ps5 = 
+    psf1 = 
+    psf2 = 
+    psf3 = 
+    psf4 = 
+    psf5 = 
+    pbr1 = 
+    pbr2 = 
+    pbr3 = 
+    pbr4 = 
+    pbr5 = 
+    pd1 = 
+    pd2 = 
+    pd3 = 
+    pd4 = 
+    pd5 = 
+    total = payment - pb1 - pb2 - pb3 - pb4 - pb5 - ps1 - ps2 - ps3 - ps4 - ps5 - psf1 - psf2 - psf3 - psf4 - psf5 - pbr1 - pbr2 - pbr3 - pbr4 - pbr5 - pd1 - pd2 - pd3 - pd4 - pd5
+    return total, pb1, pb2, pb3, pb4, pb5, total, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pd1, pd2, pd3, pd4, pd5
 
 while choice <= 5:
     result = Overalls(choice)
-    print(f"[1] Barbeque :{over1}")
-    print(f"[2] Sizzling Plate :{over2}")
-    print(f"[3] Seafood :{over3}")
-    print(f"[4] Beverages :{over4}")
-    print(f"[5] Dessert :{over5}")
-    print(f"[6] Checkout ")
+    print(f"[1] Barbeque = Ordered: {over1}")
+    print(f"[2] Sizzling Plate = Ordered: {over2}")
+    print(f"[3] Seafood = Ordered: {over3}")
+    print(f"[4] Beverages = Ordered: {over4}")
+    print(f"[5] Dessert = Ordered: {over5}")
+    print(f"[6] Checkout = ")
     choice = int(input(""))
     innerChoice = 0
     if choice == 1:
@@ -298,7 +233,7 @@ while choice <= 5:
             print(f"[5] Chicken Breast = 85 : {br5}")
             print(f"[6] Return to the Main Menu")
             innerChoice = int(input("order: "))
-    if choice == 5:
+    elif choice == 5:
         while innerChoice != 6:
             result = Dessert(innerChoice)
             print(f"To remove the Order, Input a negative sign")
@@ -309,5 +244,15 @@ while choice <= 5:
             print(f"[5] Chicken Breast = 85 : {d5}")
             print(f"[6] Return to the Main Menu")
             innerChoice = int(input("order: "))
-    if choice == 6:
+    elif choice == 6:
+        payment = int(input(""))
+        result = checkout(payment)
+        print(f"CHECK OUT")
+        print(f"\nBarbeque:")
+        print(f"\tBarbeque = {pb1}")
+        print(f"\tBarbeque Party Trey = {pb2}")
+        print(f"\tPork Barbeque = {pb3}")
+        print(f"\tChicken Barbeque Stick = {pb4}")
+        print(f"\tChicken Breast = {pb5}")
+        print(f"Change: {total}")
         break
