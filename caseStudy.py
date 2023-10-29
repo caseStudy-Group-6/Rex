@@ -1,13 +1,7 @@
 choice = 0
 innerChoice = 0
 payment = 0
-over1, over2, over3, over4, over5 = [0] * 5
-b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5 = [0] * 10
-s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5 = [0] * 10
-sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5 = [0] * 10
-br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5 = [0] * 10
-bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 10
-total = 0
+over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 55
 totalPrice = 0
 totalPriceB = 0
 bundle = 0
@@ -15,9 +9,9 @@ totalPriceS = 0
 totalPriceSf = 0
 totalPriceBr = 0
 def Restart_prog():
-    global over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5
-
-    over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 55
+    global choice, innerChoice,over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5
+    innerChoice = 7
+    choice, over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 55
     return 0
 def Barbque(innerChoice):
     global b1, b2, b3, b4, b5
@@ -161,7 +155,7 @@ def Overalls(innerChoice):
     return over1, over2, over3, over4, over5
 
 def checkout(payment):
-    global pb1, pb2, pb3, pb4, pb5, total, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPrice, totalPriceB, totalPriceS, totalPriceSf, totalPriceBr, totalPriceBd
+    global pb1, pb2, pb3, pb4, pb5, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPrice, totalPriceB, totalPriceS, totalPriceSf, totalPriceBr, totalPriceBd
     pb1 = 310 * b1
     pb2 = 25 * b2
     pb3 = 180 * b3
@@ -193,7 +187,7 @@ def checkout(payment):
     totalPriceBr = pbr1 + pbr2 + pbr3 + pbr4 + pbr4
     totalPriceBd = pbd1 + pbd2 + pbd3 + pbd4 + pbd5
     totalPrice = totalPriceB + totalPriceBr + totalPriceS + totalPriceSf + totalPriceBd
-    return total, pb1, pb2, pb3, pb4, pb5, total, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPriceB, totalPriceBd, totalPriceBr, totalPriceS, totalPriceSf
+    return pb1, pb2, pb3, pb4, pb5, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPriceB, totalPriceBd, totalPriceBr, totalPriceS, totalPriceSf
 
 while choice <= 5:
     result = Overalls(choice)
@@ -311,10 +305,8 @@ while choice <= 5:
                         payment = int(input(""))
                 elif sure == "n":
                     print(f"Choose [1] to return to the Main Menu\if not press any key...")
-                    Restart_prog()
                     choice = int(input(":"))
-                    choice = 0
-                    innerChoice = 7
+                    Restart_prog()
                     break
 change = payment - totalPrice
 print(f"Total price: {totalPrice}")
