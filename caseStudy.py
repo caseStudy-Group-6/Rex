@@ -8,11 +8,7 @@ bundle = 0
 totalPriceS = 0
 totalPriceSf = 0
 totalPriceBr = 0
-def Restart_prog():
-    global choice, innerChoice,over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5
-    innerChoice = 7
-    choice, over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 55
-    return 0
+
 def Barbque(innerChoice):
     global b1, b2, b3, b4, b5
     match innerChoice:
@@ -154,7 +150,7 @@ def Overalls(innerChoice):
             over5 = over5 + bd1 + bd2 + bd3 + bd4 + bd5
     return over1, over2, over3, over4, over5
 
-def checkout(payment):
+def checkout():
     global pb1, pb2, pb3, pb4, pb5, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPrice, totalPriceB, totalPriceS, totalPriceSf, totalPriceBr, totalPriceBd
     pb1 = 310 * b1
     pb2 = 25 * b2
@@ -188,6 +184,20 @@ def checkout(payment):
     totalPriceBd = pbd1 + pbd2 + pbd3 + pbd4 + pbd5
     totalPrice = totalPriceB + totalPriceBr + totalPriceS + totalPriceSf + totalPriceBd
     return pb1, pb2, pb3, pb4, pb5, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPriceB, totalPriceBd, totalPriceBr, totalPriceS, totalPriceSf
+
+def are_you_sure():
+    while True:
+        try:
+            response = input("Are you sure (y/n): ")
+            if response in ["y", "Y"]:
+                return True
+            elif response in ["n", "N"]:
+                return False
+            else:
+                print("Invalid input. Please enter y or n.")
+        except KeyboardInterrupt:
+            print("\nExiting...")
+            exit()
 
 while choice <= 5:
     result = Overalls(choice)
@@ -256,59 +266,61 @@ while choice <= 5:
             innerChoice = int(input("order: "))
     elif choice == 6:
         while innerChoice != 7:
-            result = checkout(payment)
+            result = checkout()
             print("CHECK OUT")
             print("Barbeque:")
-            print(f"\tBarbeque = Ordered: {b1} \n\tPrice: {pb1}")
-            print(f"\tBarbeque Party Trey = Ordered: {b2} \n\tPrice:{pb2}")
-            print(f"\tPork Barbeque = Ordered: {b3} \n\tPrice:{pb3}")
-            print(f"\tChicken Barbeque Stick = Ordered: {b4} \n\tPrice:{pb4}")
-            print(f"\tChicken Breast = Ordered: {b5} \n\tPrice:{pb5}")
+            print(f"\tBarbeque = Ordered: {b1} \n\t\tPrice: {pb1}")
+            print(f"\tBarbeque Party Trey = Ordered: {b2} \n\t\tPrice: {pb2}")
+            print(f"\tPork Barbeque = Ordered: {b3} \n\t\tPrice: {pb3}")
+            print(f"\tChicken Barbeque Stick = Ordered: {b4} \n\t\tPrice: {pb4}")
+            print(f"\tChicken Breast = Ordered: {b5} \n\t\tPrice: {pb5}")
             print(f" Total: {totalPriceB}")
             print("Sizzling:")
-            print(f"\tPork Sisig = Ordered: {s1} \n\tPrice:{ps1}")
-            print(f"\tCrispy Pata = Ordered: {s2} \n\tPrice:{ps2}")
-            print(f"\tSpecial sizzling chicken with gravy = Ordered: {s3} \n\tPrice:{ps3}")
-            print(f"\tChicken Barbeque Stick = Ordered: {s4} \n\tPrice:{ps4}")
-            print(f"\tChicken Breast = Ordered: {s5} \n\tPrice:{ps5}")
+            print(f"\tPork Sisig = Ordered: {s1} \n\t\tPrice: {ps1}")
+            print(f"\tCrispy Pata = Ordered: {s2} \n\t\tPrice: {ps2}")
+            print(f"\tSpecial sizzling chicken with gravy = Ordered: {s3} \n\t\tPrice: {ps3}")
+            print(f"\tChicken Barbeque Stick = Ordered: {s4} \n\t\tPrice: {ps4}")
+            print(f"\tChicken Breast = Ordered: {s5} \n\t\tPrice: {ps5}")
             print(f" Total: {totalPriceS}")
             print("Seafood:")
-            print(f"\tFish And Chips =Ordered: {sf1} \n\tPrice:{psf1}")
-            print(f"\tCrab Cakes = Ordered: {sf2} \n\tPrice:{psf2}")
-            print(f"\tGrilled Octopus = Ordered: {sf3} \n\tPrice:{psf3}")
-            print(f"\tGrilled Salmon = Ordered: {sf4} \n\tPrice:{psf4}")
-            print(f"\tButter Shrimp = Ordered: {sf5} \n\tPrice:{psf5}")
+            print(f"\tFish And Chips =Ordered: {sf1} \n\t\tPrice: {psf1}")
+            print(f"\tCrab Cakes = Ordered: {sf2} \n\t\tPrice: {psf2}")
+            print(f"\tGrilled Octopus = Ordered: {sf3} \n\t\tPrice: {psf3}")
+            print(f"\tGrilled Salmon = Ordered: {sf4} \n\t\tPrice: {psf4}")
+            print(f"\tButter Shrimp = Ordered: {sf5} \n\t\tPrice: {psf5}")
             print(f" Total: {totalPriceSf}")
             print("Beverages:")
-            print(f"\tIce Tea = Ordered: {br1} \n\tPrice: {pbr1}")
-            print(f"\tTanduay Ice = Ordered: {br2} \n\tPrice:  {pbr2}")
-            print(f"\tRed Horse = Ordered: {br3} \n\tPrice: {pbr3}")
-            print(f"\tSan Miguel = Ordered: {br4} \n\tPrice: {pbr4}")
-            print(f"\tGold Eagle = Ordered: {br5} \n\tPrice: {pbr5}")
+            print(f"\tIce Tea = Ordered: {br1} \n\t\tPrice: {pbr1}")
+            print(f"\tTanduay Ice = Ordered: {br2} \n\t\tPrice:  {pbr2}")
+            print(f"\tRed Horse = Ordered: {br3} \n\t\tPrice: {pbr3}")
+            print(f"\tSan Miguel = Ordered: {br4} \n\t\tPrice: {pbr4}")
+            print(f"\tGold Eagle = Ordered: {br5} \n\t\tPrice: {pbr5}")
             print(f"\nTotal: {totalPriceBr}")
             print("Bundle:")
-            print(f"\tSan Miguel Bucket = Ordered: {bd1} \n\tPrice: {pbd1}")
-            print(f"\tRed Horse Bucket = Ordered: {bd2} \n\tPrice: {pbd2}")
-            print(f"\tGold Eagle Bucket = Ordered: {bd3} \n\tPrice:  {pbd3}")
-            print(f"\tTanduay Ice Bucket = Ordered: {bd4} \n\tPrice: {pbd4}")
-            print(f"\tBarbeque party trey = Ordered: {bd5} \n\tPrice: {pbd5}")
+            print(f"\tSan Miguel Bucket = Ordered: {bd1} \n\t\tPrice: {pbd1}")
+            print(f"\tRed Horse Bucket = Ordered: {bd2} \n\t\tPrice: {pbd2}")
+            print(f"\tGold Eagle Bucket = Ordered: {bd3} \n\t\tPrice:  {pbd3}")
+            print(f"\tTanduay Ice Bucket = Ordered: {bd4} \n\t\tPrice: {pbd4}")
+            print(f"\tBarbeque party trey = Ordered: {bd5} \n\t\tPrice: {pbd5}")
             print(f"Total: {totalPriceBd}")
             print(f"\nTotal Price Ordered: {totalPrice}")
-            sure = 0
-            while sure != "y" or sure != "n":
-                sure = input("Are you sure?(y/n):")
-                if sure == "y":
-                    payment = int(input(""))
-                    while payment < totalPrice:
-                        AllinAll = payment - totalPrice
-                        print(f"You Are {AllinAll * -1} peso short, pls pay the total amount needed.")
-                        payment = int(input(""))
-                elif sure == "n":
-                    print(f"Choose [1] to return to the Main Menu\if not press any key...")
-                    choice = int(input(":"))
-                    Restart_prog()
-                    break
+            break
+        if are_you_sure():
+            print("You confirmed")
+            payment = int(input("Payment: "))
+            while payment < totalPrice:
+                AllinAll = payment - totalPrice
+                print(f"You Are {AllinAll * -1} peso short, pls pay the total amount needed.")
+                payment = int(input("Payment: "))
+            break
+        else:
+            print("You canceled.")
+            print(f"Choose [0] to return to the Main Menu\if not press any key...")
+            choice = int(input("Input your choice: "))
+            continue
+
 change = payment - totalPrice
-print(f"Total price: {totalPrice}")
+print(f"\nTotal price: {totalPrice}")
 print(f"Payment: {payment}")
 print(f"Change: {change}")
+
