@@ -1,13 +1,8 @@
-choice = 0
+choices = 0
 innerChoice = 0
 payment = 0
 over1, over2, over3, over4, over5, b1, b2, b3, b4, b5, pb1, pb2, pb3, pb4, pb5, s1, s2, s3, s4, s5, ps1, ps2, ps3, ps4, ps5, sf1, sf2, sf3, sf4, sf5, psf1, psf2, psf3, psf4, psf5, br1, br2, br3, br4, br5, pbr1, pbr2, pbr3, pbr4, pbr5, bd1, bd2, bd3, bd4, bd5, pbd1, pbd2, pbd3, pbd4, pbd5 = [0] * 55
-totalPrice = 0
-totalPriceB = 0
-bundle = 0
-totalPriceS = 0
-totalPriceSf = 0
-totalPriceBr = 0
+totalPrice, totalPriceB, bundle, totalPriceS, totalPriceSf, totalPriceBr = [0] * 6
 
 def Barbque(innerChoice):
     global b1, b2, b3, b4, b5
@@ -199,19 +194,33 @@ def are_you_sure():
             print("\nExiting...")
             exit()
 
-while choice <= 5:
+def choice():
+    while True:
+        try:
+            choices = int(input("Enter an Order: "))
+            if 1 <= choices <= 6 and choices != 7:
+                return choices
+            else:
+                print("Invalid input. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter an again.")
+
+while choices <= 5:
     result = Overalls(choice)
+    print(f"=====RESTO BAR MENU===============")
     print(f"[1] Barbeque = Ordered: {over1}")
     print(f"[2] Sizzling Plate = Ordered: {over2}")
     print(f"[3] Seafood = Ordered: {over3}")
     print(f"[4] Beverages = Ordered: {over4}")
     print(f"[5] Bundle = Ordered: {over5}")
     print(f"[6] Checkout ")
-    choice = int(input(""))
+    print(f"==================================")
+    choices = choice()
     innerChoice = 0
-    if choice == 1:
+    if choices == 1:
         while innerChoice != 6:
             result = Barbque(innerChoice)
+            print(f"========BARBERQUE=========================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Barbeque = 310 : {b1}")
             print(f"[2] chicken intestines = 25 : {b2}")
@@ -219,21 +228,25 @@ while choice <= 5:
             print(f"[4] Chicken Barbeque Stick = 180 : {b4}")
             print(f"[5] Chicken Breast = 165 : {b5}")
             print(f"[6] Return to the Main Menu")
-            innerChoice = int(input("order: "))
-    elif choice == 2:
+            print(f"==========================================")
+            innerChoice = int(input("Order: "))
+    elif choices == 2:
         while innerChoice != 6:
             result = Sizzling(innerChoice)
+            print(f"=========SIZZLING=========================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Pork Sisig = 200 : {s1}")
             print(f"[2] Crispy Pata = 636 : {s2}")
-            print(f"[3] Special sizzling chicken with gravy = 250  : {s3}")
+            print(f"[3] Special sizzling chicken with gravy = 250 : {s3}")
             print(f"[4] Sizzling liempo = 196 : {s4}")
             print(f"[5] Sizzling Pusit = 200 : {s5}")
             print(f"[6] Return to the Main Menu")
-            innerChoice = int(input("order: "))
-    elif choice == 3:
+            print(f"==========================================")
+            innerChoice = int(input("Order: "))
+    elif choices == 3:
         while innerChoice != 6:
             result = Seafood(innerChoice)
+            print(f"=========SEAFOOD==========================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Fish And Chips = 249 : {sf1}")
             print(f"[2] Crab Cakes = 389 : {sf2}")
@@ -241,10 +254,12 @@ while choice <= 5:
             print(f"[4] Grilled Salmon = 480 : {sf4}")
             print(f"[5] Butter Shrimp = 320 : {sf5}")
             print(f"[6] Return to the Main Menu")
-            innerChoice = int(input("order: "))
-    elif choice == 4:
+            print(f"==========================================")
+            innerChoice = int(input("Order: "))
+    elif choices == 4:
         while innerChoice != 6:
             result = Beverages(innerChoice)
+            print(f"=========BEVERAGES========================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Ice Tea = 40  : {br1}")
             print(f"[2] Tanduay Ice = 40: {br2}")
@@ -252,10 +267,12 @@ while choice <= 5:
             print(f"[4] San Miguel = 50 : {br4}")
             print(f"[5] Gold Eagle = 40 : {br5}")
             print(f"[6] Return to the Main Menu")
-            innerChoice = int(input("order: "))
-    elif choice == 5:
+            print(f"==========================================")
+            innerChoice = int(input("Order: "))
+    elif choices == 5:
         while innerChoice != 6:
             result = Bundle(innerChoice)
+            print(f"===========BUNDLES========================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] San Miguel Bucket = 200  : {bd1}")
             print(f"[2] Red Horse Bucket = 250 : {bd2}")
@@ -263,11 +280,12 @@ while choice <= 5:
             print(f"[4] Tanduay Ice Bucket = 150 : {bd4}")
             print(f"[5] Barbeque party trey = 990 : {bd5}")
             print(f"[6] Return to the Main Menu")
+            print(f"==========================================")
             innerChoice = int(input("order: "))
-    elif choice == 6:
+    elif choices == 6:
         while innerChoice != 7:
             result = checkout()
-            print("CHECK OUT")
+            print("====================CHECK-OUT====================")
             print("Barbeque:")
             print(f"\tBarbeque = Ordered: {b1} \n\t\tPrice: {pb1}")
             print(f"\tBarbeque Party Trey = Ordered: {b2} \n\t\tPrice: {pb2}")
@@ -291,7 +309,7 @@ while choice <= 5:
             print(f" Total: {totalPriceSf}")
             print("Beverages:")
             print(f"\tIce Tea = Ordered: {br1} \n\t\tPrice: {pbr1}")
-            print(f"\tTanduay Ice = Ordered: {br2} \n\t\tPrice:  {pbr2}")
+            print(f"\tTanduay Ice = Ordered: {br2} \n\t\tPrice: {pbr2}")
             print(f"\tRed Horse = Ordered: {br3} \n\t\tPrice: {pbr3}")
             print(f"\tSan Miguel = Ordered: {br4} \n\t\tPrice: {pbr4}")
             print(f"\tGold Eagle = Ordered: {br5} \n\t\tPrice: {pbr5}")
@@ -310,17 +328,22 @@ while choice <= 5:
             payment = int(input("Payment: "))
             while payment < totalPrice:
                 AllinAll = payment - totalPrice
-                print(f"You Are {AllinAll * -1} peso short, pls pay the total amount needed.")
-                payment = int(input("Payment: "))
+                print(f"You Are {AllinAll * -1} peso/s short, pls pay the total amount needed.")
+                payment = (input("Payment: "))
             break
         else:
             print("You canceled.")
             print(f"Choose [0] to return to the Main Menu\if not press any key...")
             choice = int(input("Input your choice: "))
             continue
+    elif choices > 6:
+        print(f"Please input [1] to [5] to order and input [6] to checkout.")
+        continue
 
 change = payment - totalPrice
-print(f"\nTotal price: {totalPrice}")
-print(f"Payment: {payment}")
-print(f"Change: {change}")
-
+print(f"===========================")
+print(f"\nTotal price: {totalPrice:,.2f}")
+print(f"Payment: {payment:,.2f}")
+print(f"Change: {change:,.2f}")
+print(f"THANK YOU FOR ORDERING <3")
+print(f"==========================")
