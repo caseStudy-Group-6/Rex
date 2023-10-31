@@ -207,7 +207,9 @@ def choice():
 
 while choices <= 5:
     result = Overalls(choice)
-    print(f"=====RESTO BAR MENU===============")
+    print(f"==================================")
+    print(f"\t\t\tResto Bar")
+    print(f"==================================")
     print(f"[1] Barbeque = Ordered: {over1}")
     print(f"[2] Sizzling Plate = Ordered: {over2}")
     print(f"[3] Seafood = Ordered: {over3}")
@@ -220,7 +222,9 @@ while choices <= 5:
     if choices == 1:
         while innerChoice != 6:
             result = Barbque(innerChoice)
-            print(f"========BARBERQUE=========================")
+            print(f"==========================================")
+            print(f"\t\t\t\t BARBEQUE")
+            print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Barbeque = 310 : {b1}")
             print(f"[2] chicken intestines = 25 : {b2}")
@@ -233,7 +237,9 @@ while choices <= 5:
     elif choices == 2:
         while innerChoice != 6:
             result = Sizzling(innerChoice)
-            print(f"=========SIZZLING=========================")
+            print(f"==========================================")
+            print(f"\t\t\t\t SIZZLING")
+            print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Pork Sisig = 200 : {s1}")
             print(f"[2] Crispy Pata = 636 : {s2}")
@@ -246,7 +252,9 @@ while choices <= 5:
     elif choices == 3:
         while innerChoice != 6:
             result = Seafood(innerChoice)
-            print(f"=========SEAFOOD==========================")
+            print(f"==========================================")
+            print(f"\t\t\t SEAFOOD")
+            print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Fish And Chips = 249 : {sf1}")
             print(f"[2] Crab Cakes = 389 : {sf2}")
@@ -259,7 +267,11 @@ while choices <= 5:
     elif choices == 4:
         while innerChoice != 6:
             result = Beverages(innerChoice)
-            print(f"=========BEVERAGES========================")
+            print(f"==========================================")
+            sns.set_theme(font_scale=1.5)
+
+            print(f"\t\t\t BEVERAGES")
+            print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] Ice Tea = 40  : {br1}")
             print(f"[2] Tanduay Ice = 40: {br2}")
@@ -272,7 +284,9 @@ while choices <= 5:
     elif choices == 5:
         while innerChoice != 6:
             result = Bundle(innerChoice)
-            print(f"===========BUNDLES========================")
+            print(f"==========================================")
+            print(f"\t\t\t BUNDLES")
+            print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
             print(f"[1] San Miguel Bucket = 200  : {bd1}")
             print(f"[2] Red Horse Bucket = 250 : {bd2}")
@@ -280,12 +294,14 @@ while choices <= 5:
             print(f"[4] Tanduay Ice Bucket = 150 : {bd4}")
             print(f"[5] Barbeque party trey = 990 : {bd5}")
             print(f"[6] Return to the Main Menu")
-            print(f"==========================================")
+            print(f"===========================================")
             innerChoice = int(input("order: "))
     elif choices == 6:
         while innerChoice != 7:
             result = checkout()
-            print("====================CHECK-OUT====================")
+            print(f"==================================")
+            print(f"\t\t\t CHECKOUT")
+            print(f"==================================")
             print("Barbeque:")
             print(f"\tBarbeque = Ordered: {b1} \n\t\tPrice: {pb1}")
             print(f"\tBarbeque Party Trey = Ordered: {b2} \n\t\tPrice: {pb2}")
@@ -341,7 +357,7 @@ while choices <= 5:
         continue
 
 change = payment - totalPrice
-print(f"===========================")
+print(f"=========================")
 print(f"\nTotal price: {totalPrice:,.2f}")
 print(f"Payment: {payment:,.2f}")
 print(f"Change: {change:,.2f}")
