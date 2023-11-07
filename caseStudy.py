@@ -143,6 +143,16 @@ def Overalls(innerChoice):
             over4 = over4 + br1 + br2 + br3 + br4 + br5
         case 5:
             over5 = over5 + bd1 + bd2 + bd3 + bd4 + bd5
+        case -1:
+            over1 = over1 - 1
+        case -2:
+            over2 = over2 - 1
+        case -3:
+            over3 = over3 - 1
+        case -4:
+            over4 = over4 - 1
+        case -5:
+            over5 = over5 - 1
     return over1, over2, over3, over4, over5
 
 def checkout():
@@ -206,7 +216,7 @@ def choice():
             print("Invalid input. Please enter an again.")
 
 while choices <= 5:
-    result = Overalls(choice)
+    result = Overalls(choices)
     print(f"==================================")
     print(f"\t\t\tResto Bar")
     print(f"==================================")
@@ -234,6 +244,7 @@ while choices <= 5:
             print(f"[6] Return to the Main Menu")
             print(f"==========================================")
             innerChoice = int(input("Order: "))
+            result = Overalls(innerChoice)
     elif choices == 2:
         while innerChoice != 6:
             result = Sizzling(innerChoice)
@@ -249,6 +260,7 @@ while choices <= 5:
             print(f"[6] Return to the Main Menu")
             print(f"==========================================")
             innerChoice = int(input("Order: "))
+            result = Overalls(innerChoice)
     elif choices == 3:
         while innerChoice != 6:
             result = Seafood(innerChoice)
@@ -264,12 +276,11 @@ while choices <= 5:
             print(f"[6] Return to the Main Menu")
             print(f"==========================================")
             innerChoice = int(input("Order: "))
+            result = Overalls(innerChoice)
     elif choices == 4:
         while innerChoice != 6:
             result = Beverages(innerChoice)
             print(f"==========================================")
-            sns.set_theme(font_scale=1.5)
-
             print(f"\t\t\t BEVERAGES")
             print(f"==========================================")
             print(f"To remove the Order, Input a negative sign")
@@ -281,6 +292,7 @@ while choices <= 5:
             print(f"[6] Return to the Main Menu")
             print(f"==========================================")
             innerChoice = int(input("Order: "))
+            result = Overalls(innerChoice)
     elif choices == 5:
         while innerChoice != 6:
             result = Bundle(innerChoice)
@@ -296,6 +308,7 @@ while choices <= 5:
             print(f"[6] Return to the Main Menu")
             print(f"===========================================")
             innerChoice = int(input("order: "))
+            result = Overalls(innerChoice)
     elif choices == 6:
         while innerChoice != 7:
             result = checkout()
@@ -350,7 +363,7 @@ while choices <= 5:
         else:
             print("You canceled.")
             print(f"Choose [0] to return to the Main Menu\if not press any key...")
-            choice = int(input("Input your choice: "))
+            choices = int(input("Input your choice: "))
             continue
     elif choices > 6:
         print(f"Please input [1] to [5] to order and input [6] to checkout.")
