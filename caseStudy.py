@@ -185,7 +185,7 @@ def checkout():
     totalPriceB = pb1 + pb2 + pb3 + pb4 + pb5
     totalPriceS = ps1 + ps2 + ps3 + ps4 + ps5
     totalPriceSf = psf1 + psf2 + psf3 + psf4 + psf5
-    totalPriceBr = pbr1 + pbr2 + pbr3 + pbr4 + pbr4
+    totalPriceBr = pbr1 + pbr2 + pbr3 + pbr4 + pbr5
     totalPriceBd = pbd1 + pbd2 + pbd3 + pbd4 + pbd5
     totalPrice = totalPriceB + totalPriceBr + totalPriceS + totalPriceSf + totalPriceBd
     return pb1, pb2, pb3, pb4, pb5, ps1, ps2, ps3, ps4, ps5, psf1, psf2, psf3, psf4, psf5, pbr1, pbr2, pbr3, pbr4, pbr5, pbd1, pbd2, pbd3, pbd4, pbd5, totalPriceB, totalPriceBd, totalPriceBr, totalPriceS, totalPriceSf
